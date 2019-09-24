@@ -141,7 +141,6 @@
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3XbgSZbzw8KF6KC4owbyzU2cpweJhevmzV8ow-mk9vfHK2aJ"
           width="120" height="100">
         <h1 class="h3 mb-3 font-weight-normal">Enter your Nickname</h1>
-        <label>Nickname: </label>
         <input type="text" id="inputName" placeholder="Nickname" required autofocus>
         <br><br>
         <button class="btn btn-lg btn-primary btn-block" id="submit">Start</button>
@@ -205,12 +204,10 @@
         })
 
         socket.on('newuser', data => {
-
           addUser(data + ' is active');
         })
         var list = []
         socket.on('userconnected', data => {
-
           for (let i = 0; i < data.length; ++i) {
             if (!list.includes(data[i])) {
               addUser(data[i] + ' is active');
@@ -240,7 +237,7 @@
         }
         function appenddivTyping(message, cls) {
           const messageElement = document.createElement('div')
-          // if()
+
           messageElement.classList.add(cls);
           messageElement.id = message.split(" ")[0];
           messageElement.innerText = message
